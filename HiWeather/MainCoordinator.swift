@@ -7,6 +7,8 @@
 
 import UIKit
 
+protocol MainCoordinatorDelegate: class {}
+
 final class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
@@ -17,7 +19,13 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = CurrentWeatherViewController()
-        navigationController.pushViewController(viewController, animated: false)
+        let child = CurrentWeatherCoordinator(
+            navigationController: navigationController,
+            coordinator: self
+        )
+        childCoordinators.append(child)
+        child.start()
     }
 }
+
+extension MainCoordinator: MainCoordinatorDelegate {}
