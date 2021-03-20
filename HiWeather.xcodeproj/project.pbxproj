@@ -71,6 +71,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E058970426064220000CB8B2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0681BE2260632BF00818A8C /* Info.plist */,
+				E0681BD4260632BE00818A8C /* AppDelegate.swift */,
+				E0681BD6260632BE00818A8C /* SceneDelegate.swift */,
+				E0681BDA260632BE00818A8C /* Assets.xcassets */,
+				E0681BDF260632BE00818A8C /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E0681BC8260632BE00818A8C = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +105,8 @@
 		E0681BD3260632BE00818A8C /* HiWeather */ = {
 			isa = PBXGroup;
 			children = (
-				E0681BE2260632BF00818A8C /* Info.plist */,
-				E0681BD4260632BE00818A8C /* AppDelegate.swift */,
-				E0681BD6260632BE00818A8C /* SceneDelegate.swift */,
+				E058970426064220000CB8B2 /* Supporting Files */,
 				E0681C0A2606331A00818A8C /* ViewController.swift */,
-				E0681BDA260632BE00818A8C /* Assets.xcassets */,
-				E0681BDF260632BE00818A8C /* LaunchScreen.storyboard */,
 			);
 			path = HiWeather;
 			sourceTree = "<group>";
@@ -413,7 +421,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PN87M324F3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HiWeather/Info.plist;
+				INFOPLIST_FILE = "HiWeather/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,7 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PN87M324F3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HiWeather/Info.plist;
+				INFOPLIST_FILE = "HiWeather/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
