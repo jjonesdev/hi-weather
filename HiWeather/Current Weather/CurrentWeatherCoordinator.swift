@@ -7,18 +7,23 @@
 
 import UIKit
 
+protocol CurrentWeatherCoordinatorDelegate: class {}
+
 final class CurrentWeatherCoordinator: Coordinator {
-    weak var parentCoordinator: MainCoordinatorDelegate?
+    weak var delegate: MainCoordinatorDelegate?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController, coordinator: MainCoordinatorDelegate) {
-      self.navigationController = navigationController
-        self.parentCoordinator = coordinator
+        self.navigationController = navigationController
+        self.delegate = coordinator
     }
     
     func start() {
-        let viewController = CurrentWeatherViewController()
+        let viewModel = CurrentWeatherViewModel(coordinator: self)
+        let viewController = CurrentWeatherViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: false)
     }
 }
+
+extension CurrentWeatherCoordinator: CurrentWeatherCoordinatorDelegate {}

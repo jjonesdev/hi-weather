@@ -16,6 +16,7 @@
 		E0681BEC260632BF00818A8C /* HiWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BEB260632BF00818A8C /* HiWeatherTests.swift */; };
 		E0681C0B2606331A00818A8C /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681C0A2606331A00818A8C /* CurrentWeatherViewController.swift */; };
 		E06AAF21260648AE00B9AA52 /* CurrentWeatherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF20260648AE00B9AA52 /* CurrentWeatherCoordinator.swift */; };
+		E06AAF2926064C4500B9AA52 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF2826064C4500B9AA52 /* CurrentWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E0681BF2260632BF00818A8C /* HiWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0681C0A2606331A00818A8C /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		E06AAF20260648AE00B9AA52 /* CurrentWeatherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCoordinator.swift; sourceTree = "<group>"; };
+		E06AAF2826064C4500B9AA52 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			children = (
 				E06AAF20260648AE00B9AA52 /* CurrentWeatherCoordinator.swift */,
 				E0681C0A2606331A00818A8C /* CurrentWeatherViewController.swift */,
+				E06AAF2826064C4500B9AA52 /* CurrentWeatherViewModel.swift */,
 			);
 			path = "Current Weather";
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				E0589715260643BA000CB8B2 /* MainCoordinator.swift in Sources */,
 				E0681BD7260632BE00818A8C /* SceneDelegate.swift in Sources */,
 				E06AAF21260648AE00B9AA52 /* CurrentWeatherCoordinator.swift in Sources */,
+				E06AAF2926064C4500B9AA52 /* CurrentWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
