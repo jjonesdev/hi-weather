@@ -12,7 +12,6 @@
 		E0681BDB260632BE00818A8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDA260632BE00818A8C /* Assets.xcassets */; };
 		E0681BE1260632BE00818A8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDF260632BE00818A8C /* LaunchScreen.storyboard */; };
 		E0681BEC260632BF00818A8C /* HiWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BEB260632BF00818A8C /* HiWeatherTests.swift */; };
-		E0681BF7260632BF00818A8C /* HiWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BF6260632BF00818A8C /* HiWeatherUITests.swift */; };
 		E0681C0B2606331A00818A8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681C0A2606331A00818A8C /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +43,6 @@
 		E0681BEB260632BF00818A8C /* HiWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiWeatherTests.swift; sourceTree = "<group>"; };
 		E0681BED260632BF00818A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0681BF2260632BF00818A8C /* HiWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0681BF6260632BF00818A8C /* HiWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiWeatherUITests.swift; sourceTree = "<group>"; };
-		E0681BF8260632BF00818A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0681C0A2606331A00818A8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +76,6 @@
 			children = (
 				E0681BD3260632BE00818A8C /* HiWeather */,
 				E0681BEA260632BF00818A8C /* HiWeatherTests */,
-				E0681BF5260632BF00818A8C /* HiWeatherUITests */,
 				E0681BD2260632BE00818A8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,15 +110,6 @@
 				E0681BED260632BF00818A8C /* Info.plist */,
 			);
 			path = HiWeatherTests;
-			sourceTree = "<group>";
-		};
-		E0681BF5260632BF00818A8C /* HiWeatherUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E0681BF6260632BF00818A8C /* HiWeatherUITests.swift */,
-				E0681BF8260632BF00818A8C /* Info.plist */,
-			);
-			path = HiWeatherUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0681BF7260632BF00818A8C /* HiWeatherUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
