@@ -10,7 +10,6 @@
 		E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BD4260632BE00818A8C /* AppDelegate.swift */; };
 		E0681BD7260632BE00818A8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BD6260632BE00818A8C /* SceneDelegate.swift */; };
 		E0681BDB260632BE00818A8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDA260632BE00818A8C /* Assets.xcassets */; };
-		E0681BDE260632BE00818A8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDD260632BE00818A8C /* Preview Assets.xcassets */; };
 		E0681BE1260632BE00818A8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDF260632BE00818A8C /* LaunchScreen.storyboard */; };
 		E0681BEC260632BF00818A8C /* HiWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BEB260632BF00818A8C /* HiWeatherTests.swift */; };
 		E0681BF7260632BF00818A8C /* HiWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BF6260632BF00818A8C /* HiWeatherUITests.swift */; };
@@ -39,7 +38,6 @@
 		E0681BD4260632BE00818A8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0681BD6260632BE00818A8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E0681BDA260632BE00818A8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E0681BDD260632BE00818A8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E0681BE0260632BE00818A8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0681BE2260632BF00818A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0681BE7260632BF00818A8C /* HiWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,17 +103,8 @@
 				E0681C0A2606331A00818A8C /* ViewController.swift */,
 				E0681BDA260632BE00818A8C /* Assets.xcassets */,
 				E0681BDF260632BE00818A8C /* LaunchScreen.storyboard */,
-				E0681BDC260632BE00818A8C /* Preview Content */,
 			);
 			path = HiWeather;
-			sourceTree = "<group>";
-		};
-		E0681BDC260632BE00818A8C /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				E0681BDD260632BE00818A8C /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		E0681BEA260632BF00818A8C /* HiWeatherTests */ = {
@@ -240,7 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0681BE1260632BE00818A8C /* LaunchScreen.storyboard in Resources */,
-				E0681BDE260632BE00818A8C /* Preview Assets.xcassets in Resources */,
 				E0681BDB260632BE00818A8C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,7 +425,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HiWeather/Preview Content\"";
 				DEVELOPMENT_TEAM = PN87M324F3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HiWeather/Info.plist;
@@ -458,7 +445,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"HiWeather/Preview Content\"";
 				DEVELOPMENT_TEAM = PN87M324F3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = HiWeather/Info.plist;
