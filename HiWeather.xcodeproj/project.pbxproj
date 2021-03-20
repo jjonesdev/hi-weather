@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E058971026064326000CB8B2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058970F26064326000CB8B2 /* Coordinator.swift */; };
+		E0589715260643BA000CB8B2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0589714260643BA000CB8B2 /* MainCoordinator.swift */; };
 		E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BD4260632BE00818A8C /* AppDelegate.swift */; };
 		E0681BD7260632BE00818A8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BD6260632BE00818A8C /* SceneDelegate.swift */; };
 		E0681BDB260632BE00818A8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDA260632BE00818A8C /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E058970F26064326000CB8B2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E0589714260643BA000CB8B2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E0681BD1260632BE00818A8C /* HiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0681BD4260632BE00818A8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0681BD6260632BE00818A8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E058970E2606430F000CB8B2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E058970F26064326000CB8B2 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		E0681BC8260632BE00818A8C = {
 			isa = PBXGroup;
 			children = (
@@ -105,8 +117,10 @@
 		E0681BD3260632BE00818A8C /* HiWeather */ = {
 			isa = PBXGroup;
 			children = (
+				E058970E2606430F000CB8B2 /* Protocols */,
 				E058970426064220000CB8B2 /* Supporting Files */,
 				E0681C0A2606331A00818A8C /* ViewController.swift */,
+				E0589714260643BA000CB8B2 /* MainCoordinator.swift */,
 			);
 			path = HiWeather;
 			sourceTree = "<group>";
@@ -249,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E058971026064326000CB8B2 /* Coordinator.swift in Sources */,
 				E0681C0B2606331A00818A8C /* ViewController.swift in Sources */,
 				E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */,
+				E0589715260643BA000CB8B2 /* MainCoordinator.swift in Sources */,
 				E0681BD7260632BE00818A8C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
