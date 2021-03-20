@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BD4260632BE00818A8C /* AppDelegate.swift */; };
 		E0681BD7260632BE00818A8C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BD6260632BE00818A8C /* SceneDelegate.swift */; };
-		E0681BD9260632BE00818A8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BD8260632BE00818A8C /* ContentView.swift */; };
 		E0681BDB260632BE00818A8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDA260632BE00818A8C /* Assets.xcassets */; };
 		E0681BDE260632BE00818A8C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDD260632BE00818A8C /* Preview Assets.xcassets */; };
 		E0681BE1260632BE00818A8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDF260632BE00818A8C /* LaunchScreen.storyboard */; };
 		E0681BEC260632BF00818A8C /* HiWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BEB260632BF00818A8C /* HiWeatherTests.swift */; };
 		E0681BF7260632BF00818A8C /* HiWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BF6260632BF00818A8C /* HiWeatherUITests.swift */; };
+		E0681C0B2606331A00818A8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681C0A2606331A00818A8C /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		E0681BD1260632BE00818A8C /* HiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0681BD4260632BE00818A8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0681BD6260632BE00818A8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E0681BD8260632BE00818A8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E0681BDA260632BE00818A8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0681BDD260632BE00818A8C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E0681BE0260632BE00818A8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		E0681BF2260632BF00818A8C /* HiWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0681BF6260632BF00818A8C /* HiWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiWeatherUITests.swift; sourceTree = "<group>"; };
 		E0681BF8260632BF00818A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0681C0A2606331A00818A8C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +99,12 @@
 		E0681BD3260632BE00818A8C /* HiWeather */ = {
 			isa = PBXGroup;
 			children = (
+				E0681BE2260632BF00818A8C /* Info.plist */,
 				E0681BD4260632BE00818A8C /* AppDelegate.swift */,
 				E0681BD6260632BE00818A8C /* SceneDelegate.swift */,
-				E0681BD8260632BE00818A8C /* ContentView.swift */,
+				E0681C0A2606331A00818A8C /* ViewController.swift */,
 				E0681BDA260632BE00818A8C /* Assets.xcassets */,
 				E0681BDF260632BE00818A8C /* LaunchScreen.storyboard */,
-				E0681BE2260632BF00818A8C /* Info.plist */,
 				E0681BDC260632BE00818A8C /* Preview Content */,
 			);
 			path = HiWeather;
@@ -266,9 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0681C0B2606331A00818A8C /* ViewController.swift in Sources */,
 				E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */,
 				E0681BD7260632BE00818A8C /* SceneDelegate.swift in Sources */,
-				E0681BD9260632BE00818A8C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
