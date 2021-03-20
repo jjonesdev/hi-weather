@@ -17,7 +17,7 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = ViewController()
+        let viewController = CurrentWeatherViewController()
         navigationController.pushViewController(viewController, animated: false)
     }
 }
