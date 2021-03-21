@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - WeatherReponse
-public struct CurrentWeather: Decodable {
+public struct CurrentWeather: Decodable, Hashable {
     public let lat: Double
     public let lon: Double
     public let timezone: String
@@ -25,7 +25,7 @@ public struct CurrentWeather: Decodable {
 }
 
 // MARK: - Current
-public struct Current: Decodable {
+public struct Current: Decodable, Hashable {
     public let dt: Int
     public let sunrise: Int?
     public let sunset: Int?
@@ -70,7 +70,7 @@ public struct Current: Decodable {
 }
 
 // MARK: - Weather
-public struct Weather: Decodable {
+public struct Weather: Decodable, Hashable {
     public let id: Int
     public let main: String
     public let description: String
@@ -78,13 +78,13 @@ public struct Weather: Decodable {
 }
 
 // MARK: - Minutely
-public struct Minutely: Decodable {
+public struct Minutely: Decodable, Hashable {
     public let dt: Int
     public let precipitation: Int
 }
 
 // MARK: - Daily
-public struct Daily: Decodable {
+public struct Daily: Decodable, Hashable {
     public let dt: Int
     public let sunrise: Int
     public let sunset: Int
@@ -102,7 +102,7 @@ public struct Daily: Decodable {
 }
 
 // MARK: - FeelsLike
-public struct FeelsLike: Decodable {
+public struct FeelsLike: Decodable, Hashable {
     public let day: Double
     public let night: Double
     public let eve: Double
@@ -110,7 +110,7 @@ public struct FeelsLike: Decodable {
 }
 
 // MARK: - Temp
-public struct Temp: Decodable {
+public struct Temp: Decodable, Hashable {
     public let day: Double
     public let min: Double
     public let max: Double

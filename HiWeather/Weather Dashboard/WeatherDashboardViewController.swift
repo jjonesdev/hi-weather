@@ -20,7 +20,7 @@ final class WeatherDashboardViewController: UIViewController {
     }
     
     enum Item: Hashable {
-        case currentWeatherItem
+        case currentWeatherItem(CurrentWeather)
         case hourlyWeatherItem
         case weeklyWeatherItem
     }
@@ -101,17 +101,15 @@ final class WeatherDashboardViewController: UIViewController {
         DataSource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
     }
     
-    private func cell(
-        collectionView: UICollectionView,
-        indexPath: IndexPath,
-        item: Item
-    ) -> UICollectionViewCell {
+    private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell {
         switch item {
-        case .currentWeatherItem:
+        case let .currentWeatherItem(currentWeather):
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: CurrentWeatherCell.reuseIdentifer,
                 for: indexPath
-            )
+            ) as! CurrentWeatherCell
+            
+            cell.setup(location: currentWeather.timezone, temperature: currentWeather.current.temp)
             return cell
         case .hourlyWeatherItem:
             let cell = collectionView.dequeueReusableCell(
@@ -134,7 +132,7 @@ final class WeatherDashboardViewController: UIViewController {
         var snapshot = Snapshot()
         snapshot.appendSections([.currentWeather, .hourlyWeather, .weeklyWeather])
  
-        snapshot.appendItems([.currentWeatherItem], toSection: .currentWeather)
+        snapshot.appendItems([.currentWeatherItem(currentWeather)], toSection: .currentWeather)
         snapshot.appendItems([.hourlyWeatherItem], toSection: .hourlyWeather)
         snapshot.appendItems([.weeklyWeatherItem], toSection: .weeklyWeather)
         

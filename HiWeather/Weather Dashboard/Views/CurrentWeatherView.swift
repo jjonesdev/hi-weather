@@ -11,6 +11,18 @@ final class CurrentWeatherView: UIView {
     private lazy var locationLabel = makeCurrentLocationLabel()
     private lazy var temperatureLabel = makeCurrentTemperatureLabel()
     
+    var location: String? {
+        didSet {
+            locationLabel.text = location ?? "n/a"
+        }
+    }
+    
+    var temperature: String? {
+        didSet {
+            temperatureLabel.text = temperature ?? "n/a"
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
@@ -46,7 +58,6 @@ final class CurrentWeatherView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.textAlignment = .center
-        label.text = "Detroit"
         
         return label
     }
@@ -56,7 +67,7 @@ final class CurrentWeatherView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .largeTitle)
         label.textAlignment = .center
-        label.text = 267.998.toFarenheit
+        
         return label
     }
     

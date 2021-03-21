@@ -29,7 +29,8 @@ final class WeatherDashboardViewModel {
     
     @Published private(set) var state: State = .idle
     
-    init(coordinator: WeatherDashboardCoordinatorDelegate, service: CurrentWeatherable = AppState.shared) {
+    init(coordinator: WeatherDashboardCoordinatorDelegate,
+         service: CurrentWeatherable = AppState.shared) {
         self.delegate = coordinator
         self.appState = service
     }
@@ -39,10 +40,7 @@ final class WeatherDashboardViewModel {
         case .loadCurrentWeather:
             state = .loading
             appState.loadCurrentWeather()
-                .sink(
-                    receiveCompletion: completion(_:),
-                    receiveValue: update(currentWeather:)
-                )
+                .sink(receiveCompletion: completion(_:), receiveValue: update(currentWeather:))
                 .store(in: &cancellables)
         }
     }

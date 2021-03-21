@@ -8,18 +8,20 @@
 import UIKit
 
 final class CurrentWeatherCell: UICollectionViewCell, ReuseIdentifiable {
+    private let currentWeatherView = CurrentWeatherView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        style()
+        contentView.styleAsCard()
         setupSubviews()
     }
-
-    private func style() {
-        backgroundColor = .systemBlue
+    
+    func setup(location: String, temperature: Double) {
+        currentWeatherView.location = location
+        currentWeatherView.temperature = temperature.toFarenheit
     }
     
     private func setupSubviews() {
-        let currentWeatherView = CurrentWeatherView()
         currentWeatherView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(currentWeatherView)
         
