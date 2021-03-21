@@ -68,7 +68,7 @@ final class CurrentWeatherViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "current-weather-cell")
+        collectionView.register(CurrentWeatherCell.self, forCellWithReuseIdentifier: CurrentWeatherCell.reuseIdentifer)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "hourly-weather-cell")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "weekly-weather-cell")
         collectionView.backgroundColor = .systemGroupedBackground
@@ -108,10 +108,9 @@ final class CurrentWeatherViewController: UIViewController {
         switch item {
         case .currentWeatherItem:
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: "current-weather-cell",
+                withReuseIdentifier: CurrentWeatherCell.reuseIdentifer,
                 for: indexPath
             )
-            cell.backgroundColor = .systemBlue
             return cell
         case .hourlyWeatherItem:
             let cell = collectionView.dequeueReusableCell(
