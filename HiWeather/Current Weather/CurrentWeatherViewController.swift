@@ -8,13 +8,20 @@
 import UIKit
 
 final class CurrentWeatherViewController: UIViewController {
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
+    
+    enum Section: Hashable {}
+    enum Item: Hashable {}
+    
     private let viewModel: CurrentWeatherViewModel
     
     private lazy var collectionView = UICollectionView(
         frame: view.bounds,
         collectionViewLayout: makeCollectionViewLayout()
     )
-        
+    
+    private lazy var dataSource = makeDataSource()
+            
     init(viewModel: CurrentWeatherViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -32,11 +39,19 @@ final class CurrentWeatherViewController: UIViewController {
     }
     
     private func makeCollectionViewLayout() -> UICollectionViewLayout {
-        UICollectionViewCompositionalLayout(sectionProvider: sectionFor(index:environment:))
+        UICollectionViewCompositionalLayout(sectionProvider: section(index:environment:))
     }
     
-    private func sectionFor(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+    private func section(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         NSCollectionLayoutSection.fullWidth(groupHeight: .estimated(55))
+    }
+    
+    private func makeDataSource() -> DataSource {
+        DataSource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
+    }
+    
+    private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell {
+        UICollectionViewCell()
     }
     
     required init?(coder: NSCoder) {
