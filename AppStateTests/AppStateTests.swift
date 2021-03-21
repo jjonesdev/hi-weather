@@ -9,9 +9,21 @@ import XCTest
 @testable import AppState
 
 class AppStateTests: XCTestCase {
-
-    override func setUp() {}
+    var mockCurentWeatherable: MockCurrentWeatherable!
     
-    override func tearDown() {}
-
+    override func setUp() {
+        mockCurentWeatherable = MockCurrentWeatherable()
+    }
+    
+    override func tearDown() {
+        mockCurentWeatherable = nil
+    }
+    
+    func testLoadCurrentWeatherIsCalled() {
+        // When loadCurrentWeather is called.
+        _ = mockCurentWeatherable.loadCurrentWeather()
+        
+        // Then the method is triggered.
+        XCTAssertTrue(mockCurentWeatherable.isLoadCurrentWeatherCalled)
+    }
 }
