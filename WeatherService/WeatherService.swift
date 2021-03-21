@@ -7,7 +7,7 @@
 
 import Combine
 
-public protocol CurrentWeatherServiceable {
+public protocol WeatherServiceable {
     func fetchCurrentWeather() -> AnyPublisher<CurrentWeather, Error>
 }
 
@@ -17,7 +17,7 @@ public final class WeatherService {
     public init() {}
 }
 
-extension WeatherService: CurrentWeatherServiceable {
+extension WeatherService: WeatherServiceable {
     public func fetchCurrentWeather() -> AnyPublisher<CurrentWeather, Error> {
         urlSession.publisher(for: Endpoint.currentWeather.url)
     }
