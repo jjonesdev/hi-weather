@@ -80,7 +80,10 @@ final class CurrentWeatherViewController: UIViewController {
         UICollectionViewCompositionalLayout(sectionProvider: section(index:environment:))
     }
     
-    private func section(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+    private func section(
+        index: Int,
+        environment: NSCollectionLayoutEnvironment
+    ) -> NSCollectionLayoutSection {
         let section = dataSource.snapshot().sectionIdentifiers[index]
         
         switch section {
@@ -97,18 +100,31 @@ final class CurrentWeatherViewController: UIViewController {
         DataSource(collectionView: collectionView, cellProvider: cell(collectionView:indexPath:item:))
     }
     
-    private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell {
+    private func cell(
+        collectionView: UICollectionView,
+        indexPath: IndexPath,
+        item: Item
+    ) -> UICollectionViewCell {
         switch item {
         case .currentWeatherItem:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "current-weather-cell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "current-weather-cell",
+                for: indexPath
+            )
             cell.backgroundColor = .systemBlue
             return cell
         case .hourlyWeatherItem:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hourly-weather-cell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "hourly-weather-cell",
+                for: indexPath
+            )
             cell.backgroundColor = .systemTeal
             return cell
         case .weeklyWeatherItem:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weekly-weather-cell", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: "weekly-weather-cell",
+                for: indexPath
+            )
             cell.backgroundColor = .cyan
             return cell
         }

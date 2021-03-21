@@ -23,7 +23,7 @@ final class CurrentWeatherViewModel {
         case loaded(CurrentWeather)
     }
     
-    private let service: CurrentWeatherable
+    private let appState: CurrentWeatherable
     private var cancellables: Set<AnyCancellable> = []
     weak var delegate: CurrentWeatherCoordinatorDelegate?
     
@@ -31,15 +31,18 @@ final class CurrentWeatherViewModel {
     
     init(coordinator: CurrentWeatherCoordinatorDelegate, service: CurrentWeatherable = AppState.shared) {
         self.delegate = coordinator
-        self.service = service
+        self.appState = service
     }
     
     func perform(_ action: Action) {
         switch action {
         case .loadCurrentWeather:
             state = .loading
-            service.loadCurrentWeather()
-                .sink(receiveCompletion: completion(_:), receiveValue: update(currentWeather:))
+            appState.loadCurrentWeather()
+                .sink(
+                    receiveCompletion: completion(_:),
+                    receiveValue: update(currentWeather:)
+                )
                 .store(in: &cancellables)
         }
     }
