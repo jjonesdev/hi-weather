@@ -38,6 +38,8 @@
 		E06AAFA026066F2200B9AA52 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF9F26066F2200B9AA52 /* URLSessionExtensions.swift */; };
 		E08B7D172607D77900DD1AB4 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B7D162607D77900DD1AB4 /* ReuseIdentifiable.swift */; };
 		E08B7D2E2607D9D700DD1AB4 /* CurrentWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B7D2D2607D9D700DD1AB4 /* CurrentWeatherCell.swift */; };
+		E08B7D352607E0E100DD1AB4 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B7D342607E0E100DD1AB4 /* DoubleExtensions.swift */; };
+		E08B7D4F2607E3B100DD1AB4 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B7D4E2607E3B100DD1AB4 /* CurrentWeatherView.swift */; };
 		E0F3EEC22607951A00CE2488 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF9626066B4900B9AA52 /* CurrentWeather.swift */; };
 /* End PBXBuildFile section */
 
@@ -147,6 +149,8 @@
 		E06AAF9F26066F2200B9AA52 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
 		E08B7D162607D77900DD1AB4 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 		E08B7D2D2607D9D700DD1AB4 /* CurrentWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCell.swift; sourceTree = "<group>"; };
+		E08B7D342607E0E100DD1AB4 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		E08B7D4E2607E3B100DD1AB4 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				E05927202607BCD300A24F24 /* NSCollectionLayoutSectionExtensions.swift */,
+				E08B7D342607E0E100DD1AB4 /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				E06AAF20260648AE00B9AA52 /* CurrentWeatherCoordinator.swift */,
 				E0681C0A2606331A00818A8C /* CurrentWeatherViewController.swift */,
 				E06AAF2826064C4500B9AA52 /* CurrentWeatherViewModel.swift */,
+				E08B7D482607E39200DD1AB4 /* Cells */,
 				E08B7D2C2607D9C800DD1AB4 /* Views */,
 			);
 			path = "Current Weather";
@@ -406,9 +412,25 @@
 		E08B7D2C2607D9C800DD1AB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E08B7D2D2607D9D700DD1AB4 /* CurrentWeatherCell.swift */,
+				E08B7D3B2607E2F500DD1AB4 /* CurrentWeatherView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E08B7D3B2607E2F500DD1AB4 /* CurrentWeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				E08B7D4E2607E3B100DD1AB4 /* CurrentWeatherView.swift */,
+			);
+			path = CurrentWeatherView;
+			sourceTree = "<group>";
+		};
+		E08B7D482607E39200DD1AB4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E08B7D2D2607D9D700DD1AB4 /* CurrentWeatherCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -658,11 +680,13 @@
 				E08B7D172607D77900DD1AB4 /* ReuseIdentifiable.swift in Sources */,
 				E08B7D2E2607D9D700DD1AB4 /* CurrentWeatherCell.swift in Sources */,
 				E0681C0B2606331A00818A8C /* CurrentWeatherViewController.swift in Sources */,
+				E08B7D352607E0E100DD1AB4 /* DoubleExtensions.swift in Sources */,
 				E05927292607BD2E00A24F24 /* Spacing.swift in Sources */,
 				E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */,
 				E0589715260643BA000CB8B2 /* MainCoordinator.swift in Sources */,
 				E05927212607BCD300A24F24 /* NSCollectionLayoutSectionExtensions.swift in Sources */,
 				E0681BD7260632BE00818A8C /* SceneDelegate.swift in Sources */,
+				E08B7D4F2607E3B100DD1AB4 /* CurrentWeatherView.swift in Sources */,
 				E06AAF21260648AE00B9AA52 /* CurrentWeatherCoordinator.swift in Sources */,
 				E06AAF2926064C4500B9AA52 /* CurrentWeatherViewModel.swift in Sources */,
 			);

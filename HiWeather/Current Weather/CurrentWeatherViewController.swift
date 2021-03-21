@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import WeatherService
 
 final class CurrentWeatherViewController: UIViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
@@ -45,11 +46,11 @@ final class CurrentWeatherViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         bindViewModelState()
-        dataSource.apply(snapshot())
     }
     
     private func bindViewModelState() {
         viewModel.$state
+            .receive(on: DispatchQueue.main)
             .sink(receiveValue: update(state:))
             .store(in: &cancellables)
     }
@@ -63,7 +64,7 @@ final class CurrentWeatherViewController: UIViewController {
         case let .failed(error):
             print(error)
         case let .loaded(currentWeather):
-            print(currentWeather.current)
+            dataSource.apply(makeSnapshot(with: currentWeather))
         }
     }
     
@@ -129,10 +130,10 @@ final class CurrentWeatherViewController: UIViewController {
         }
     }
     
-    func snapshot() -> Snapshot {
+    func makeSnapshot(with currentWeather: CurrentWeather) -> Snapshot {
         var snapshot = Snapshot()
         snapshot.appendSections([.currentWeather, .hourlyWeather, .weeklyWeather])
-        
+ 
         snapshot.appendItems([.currentWeatherItem], toSection: .currentWeather)
         snapshot.appendItems([.hourlyWeatherItem], toSection: .hourlyWeather)
         snapshot.appendItems([.weeklyWeatherItem], toSection: .weeklyWeather)

@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherCell.swift
+//  CurrentWeatherView.swift
 //  HiWeather
 //
 //  Created by Jordan Jones on 3/21/21.
@@ -7,29 +7,26 @@
 
 import UIKit
 
-final class CurrentWeatherCell: UICollectionViewCell, ReuseIdentifiable {
-    private lazy var currentLocationLabel = makeCurrentLocationLabel()
-    private lazy var currentTemperatureLabel = makeCurrentTemperatureLabel()
+final class CurrentWeatherView: UIView {
+    private lazy var locationLabel = makeCurrentLocationLabel()
+    private lazy var temperatureLabel = makeCurrentTemperatureLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        style()
         setupSubviews()
-    }
-    
-    private func style() {
-        backgroundColor = .systemBlue
     }
     
     private func setupSubviews() {
         let vStack = makeVerticalStack()
-        vStack.addArrangedSubview(currentLocationLabel)
-        vStack.addArrangedSubview(currentTemperatureLabel)
-        contentView.addSubview(vStack)
+        vStack.addArrangedSubview(locationLabel)
+        vStack.addArrangedSubview(temperatureLabel)
+        addSubview(vStack)
         
         NSLayoutConstraint.activate([
-            vStack.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            vStack.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
+            vStack.topAnchor.constraint(equalTo: topAnchor),
+            vStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+            vStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+            vStack.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     
@@ -49,7 +46,7 @@ final class CurrentWeatherCell: UICollectionViewCell, ReuseIdentifiable {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .body)
         label.textAlignment = .center
-        label.text = "Detroit, MI"
+        label.text = "Detroit"
         
         return label
     }
@@ -59,8 +56,7 @@ final class CurrentWeatherCell: UICollectionViewCell, ReuseIdentifiable {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .largeTitle)
         label.textAlignment = .center
-        label.text = "62"
-        
+        label.text = 267.998.toFarenheit
         return label
     }
     
@@ -68,3 +64,4 @@ final class CurrentWeatherCell: UICollectionViewCell, ReuseIdentifiable {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
