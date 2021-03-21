@@ -13,10 +13,12 @@ final class CurrentWeatherViewController: UIViewController {
     
     enum Section: Hashable {
         case currentWeather
+        case hourlyWeather
     }
     
     enum Item: Hashable {
         case currentWeatherItem
+        case hourlyWeatherItem
     }
     
     private let viewModel: CurrentWeatherViewModel
@@ -41,6 +43,7 @@ final class CurrentWeatherViewController: UIViewController {
     
     private func setupCollectionView() {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "current-weather-cell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "hourly-weather-cell")
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(collectionView)
@@ -56,6 +59,8 @@ final class CurrentWeatherViewController: UIViewController {
         switch section {
         case .currentWeather:
             return NSCollectionLayoutSection.fullWidth(groupHeight: .absolute(300))
+        case .hourlyWeather:
+            return NSCollectionLayoutSection.fullWidth(groupHeight: .absolute(100))
         }
     }
     
@@ -69,13 +74,18 @@ final class CurrentWeatherViewController: UIViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "current-weather-cell", for: indexPath)
             cell.backgroundColor = .systemBlue
             return cell
+        case .hourlyWeatherItem:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hourly-weather-cell", for: indexPath)
+            cell.backgroundColor = .systemTeal
+            return cell
         }
     }
     
     func snapshot() -> Snapshot {
         var snapshot = Snapshot()
-        snapshot.appendSections([.currentWeather])
+        snapshot.appendSections([.currentWeather, .hourlyWeather])
         snapshot.appendItems([.currentWeatherItem], toSection: .currentWeather)
+        snapshot.appendItems([.hourlyWeatherItem], toSection: .hourlyWeather)
         
         return snapshot
     }
