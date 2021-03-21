@@ -9,9 +9,15 @@ import UIKit
 
 final class CurrentWeatherViewController: UIViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
     
-    enum Section: Hashable {}
-    enum Item: Hashable {}
+    enum Section: Hashable {
+        case currentWeather
+    }
+    
+    enum Item: Hashable {
+        case currentWeatherItem
+    }
     
     private let viewModel: CurrentWeatherViewModel
     
@@ -30,9 +36,11 @@ final class CurrentWeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        dataSource.apply(snapshot())
     }
     
     private func setupCollectionView() {
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "current-weather-cell")
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(collectionView)
@@ -43,7 +51,12 @@ final class CurrentWeatherViewController: UIViewController {
     }
     
     private func section(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
-        NSCollectionLayoutSection.fullWidth(groupHeight: .estimated(55))
+        let section = dataSource.snapshot().sectionIdentifiers[index]
+        
+        switch section {
+        case .currentWeather:
+            return NSCollectionLayoutSection.fullWidth(groupHeight: .absolute(300))
+        }
     }
     
     private func makeDataSource() -> DataSource {
@@ -51,7 +64,20 @@ final class CurrentWeatherViewController: UIViewController {
     }
     
     private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell {
-        UICollectionViewCell()
+        switch item {
+        case .currentWeatherItem:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "current-weather-cell", for: indexPath)
+            cell.backgroundColor = .systemBlue
+            return cell
+        }
+    }
+    
+    func snapshot() -> Snapshot {
+        var snapshot = Snapshot()
+        snapshot.appendSections([.currentWeather])
+        snapshot.appendItems([.currentWeatherItem], toSection: .currentWeather)
+        
+        return snapshot
     }
     
     required init?(coder: NSCoder) {
