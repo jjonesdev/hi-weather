@@ -14,7 +14,10 @@ final class CurrentWeatherCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController, coordinator: MainCoordinatorDelegate) {
+    init(
+        navigationController: UINavigationController,
+        coordinator: MainCoordinatorDelegate
+    ) {
         self.navigationController = navigationController
         self.delegate = coordinator
     }

@@ -9,25 +9,21 @@ import XCTest
 @testable import AppState
 
 class AppStateTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var mockCurentWeatherable: MockCurrentWeatherable!
+    
+    override func setUp() {
+        mockCurentWeatherable = MockCurrentWeatherable()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        mockCurentWeatherable = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testLoadCurrentWeatherIsCalled() {
+        // When loadCurrentWeather is called.
+        _ = mockCurentWeatherable.loadCurrentWeather()
+        
+        // Then the method is triggered.
+        XCTAssertTrue(mockCurentWeatherable.isLoadCurrentWeatherCalled)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
