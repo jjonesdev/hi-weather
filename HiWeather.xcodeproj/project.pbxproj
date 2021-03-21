@@ -36,6 +36,7 @@
 		E06AAF72260651CE00B9AA52 /* WeatherService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E06AAF5C260651CE00B9AA52 /* WeatherService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E06AAF862606689900B9AA52 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF852606689900B9AA52 /* WeatherService.swift */; };
 		E06AAFA026066F2200B9AA52 /* URLSessionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF9F26066F2200B9AA52 /* URLSessionExtensions.swift */; };
+		E08B7D172607D77900DD1AB4 /* ReuseIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08B7D162607D77900DD1AB4 /* ReuseIdentifiable.swift */; };
 		E0F3EEC22607951A00CE2488 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF9626066B4900B9AA52 /* CurrentWeather.swift */; };
 /* End PBXBuildFile section */
 
@@ -143,6 +144,7 @@
 		E06AAF852606689900B9AA52 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		E06AAF9626066B4900B9AA52 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		E06AAF9F26066F2200B9AA52 /* URLSessionExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtensions.swift; sourceTree = "<group>"; };
+		E08B7D162607D77900DD1AB4 /* ReuseIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifiable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				E058970F26064326000CB8B2 /* Coordinator.swift */,
+				E08B7D162607D77900DD1AB4 /* ReuseIdentifiable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E058971026064326000CB8B2 /* Coordinator.swift in Sources */,
+				E08B7D172607D77900DD1AB4 /* ReuseIdentifiable.swift in Sources */,
 				E0681C0B2606331A00818A8C /* CurrentWeatherViewController.swift in Sources */,
 				E05927292607BD2E00A24F24 /* Spacing.swift in Sources */,
 				E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */,
