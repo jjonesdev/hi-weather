@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Endpoint {
-    var path: String
-    var queryItems: [URLQueryItem] = []
+public struct Endpoint {
+    public var path: String
+    public var queryItems: [URLQueryItem] = []
 }
 
 extension Endpoint {
-    var url: URL {
+    public var url: URL {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "api.openweathermap.org"
