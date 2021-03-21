@@ -10,6 +10,11 @@ import UIKit
 final class CurrentWeatherViewController: UIViewController {
     private let viewModel: CurrentWeatherViewModel
     
+    private lazy var collectionView = UICollectionView(
+        frame: view.bounds,
+        collectionViewLayout: makeCollectionViewLayout()
+    )
+        
     init(viewModel: CurrentWeatherViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -17,7 +22,21 @@ final class CurrentWeatherViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGroupedBackground
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
+        collectionView.backgroundColor = .systemGroupedBackground
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(collectionView)
+    }
+    
+    private func makeCollectionViewLayout() -> UICollectionViewLayout {
+        UICollectionViewCompositionalLayout(sectionProvider: sectionFor(index:environment:))
+    }
+    
+    private func sectionFor(index: Int, environment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        NSCollectionLayoutSection.fullWidth(groupHeight: .estimated(55))
     }
     
     required init?(coder: NSCoder) {
