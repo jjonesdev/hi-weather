@@ -6,13 +6,22 @@
 //
 
 import Combine
+import WeatherService
 
-protocol CurrentWeatherable: class {
+public protocol CurrentWeatherable: class {
     func loadCurrentWeather() -> AnyPublisher<CurrentWeather, Error>
 }
 
-public final class AppState {}
+public final class AppState {
+    public static let shared = AppState()
+    let weatherService = WeatherService()
+}
 
+extension AppState: CurrentWeatherable {
+    public func loadCurrentWeather() -> AnyPublisher<CurrentWeather, Error> {
+        weatherService.fetchCurrentWeather()
+    }
+}
 
 
 

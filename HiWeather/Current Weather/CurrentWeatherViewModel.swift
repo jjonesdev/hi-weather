@@ -6,25 +6,25 @@
 //
 
 import Combine
-import WeatherService
+import AppState
 
 final class CurrentWeatherViewModel {
-    private let service: CurrentWeatherServiceable
+    private let state: CurrentWeatherable
     private var cancellables: Set<AnyCancellable> = []
     weak var delegate: CurrentWeatherCoordinatorDelegate?
     
     init(
         coordinator: CurrentWeatherCoordinatorDelegate,
-        service: CurrentWeatherServiceable = WeatherService.shared
+        state: CurrentWeatherable = AppState.shared
     ) {
         self.delegate = coordinator
-        self.service = service
+        self.state = state
         
-        service.fetchCurrentWeather()
+        state.loadCurrentWeather()
             .sink { (completion) in
                 print(completion)
             } receiveValue: { (response) in
-                print(response)
+                print(response.current)
             }
             .store(in: &cancellables)
     }

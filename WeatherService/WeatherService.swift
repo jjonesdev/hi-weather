@@ -6,15 +6,15 @@
 //
 
 import Combine
-import AppState
 
 public protocol CurrentWeatherServiceable {
     func fetchCurrentWeather() -> AnyPublisher<CurrentWeather, Error>
 }
 
 public final class WeatherService {
-    public static let shared = WeatherService()
     var urlSession = URLSession.shared
+    
+    public init() {}
 }
 
 extension WeatherService: CurrentWeatherServiceable {
