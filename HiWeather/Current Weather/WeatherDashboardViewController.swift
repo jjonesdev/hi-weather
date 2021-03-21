@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherViewController.swift
+//  WeatherDashboardViewController.swift
 //  HiWeather
 //
 //  Created by Jordan Jones on 3/20/21.
@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import WeatherService
 
-final class CurrentWeatherViewController: UIViewController {
+final class WeatherDashboardViewController: UIViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Item>
     
@@ -25,7 +25,7 @@ final class CurrentWeatherViewController: UIViewController {
         case weeklyWeatherItem
     }
     
-    private let viewModel: CurrentWeatherViewModel
+    private let viewModel: WeatherDashboardViewModel
     private var cancellables: Set<AnyCancellable> = []
     
     private lazy var collectionView = UICollectionView(
@@ -35,7 +35,7 @@ final class CurrentWeatherViewController: UIViewController {
     
     private lazy var dataSource = makeDataSource()
             
-    init(viewModel: CurrentWeatherViewModel) {
+    init(viewModel: WeatherDashboardViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         
@@ -55,7 +55,7 @@ final class CurrentWeatherViewController: UIViewController {
             .store(in: &cancellables)
     }
     
-    private func update(state: CurrentWeatherViewModel.State) {
+    private func update(state: WeatherDashboardViewModel.State) {
         switch state {
         case .idle:
             return

@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherCoordinator.swift
+//  WeatherDashboardCoordinator.swift
 //  HiWeather
 //
 //  Created by Jordan Jones on 3/20/21.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol CurrentWeatherCoordinatorDelegate: class {}
+protocol WeatherDashboardCoordinatorDelegate: class {}
 
-final class CurrentWeatherCoordinator: Coordinator {
+final class WeatherDashboardCoordinator: Coordinator {
     weak var delegate: MainCoordinatorDelegate?
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
@@ -20,10 +20,10 @@ final class CurrentWeatherCoordinator: Coordinator {
     }
     
     func start() {
-        let viewModel = CurrentWeatherViewModel(coordinator: self)
-        let viewController = CurrentWeatherViewController(viewModel: viewModel)
+        let viewModel = WeatherDashboardViewModel(coordinator: self)
+        let viewController = WeatherDashboardViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: false)
     }
 }
 
-extension CurrentWeatherCoordinator: CurrentWeatherCoordinatorDelegate {}
+extension WeatherDashboardCoordinator: WeatherDashboardCoordinatorDelegate {}

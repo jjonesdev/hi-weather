@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherViewModel.swift
+//  WeatherDashboardViewModel.swift
 //  HiWeather
 //
 //  Created by Jordan Jones on 3/20/21.
@@ -9,7 +9,7 @@ import Combine
 import AppState
 import WeatherService
 
-final class CurrentWeatherViewModel {
+final class WeatherDashboardViewModel {
     typealias Completion = Subscribers.Completion
     
     enum Action {
@@ -25,11 +25,11 @@ final class CurrentWeatherViewModel {
     
     private let appState: CurrentWeatherable
     private var cancellables: Set<AnyCancellable> = []
-    weak var delegate: CurrentWeatherCoordinatorDelegate?
+    weak var delegate: WeatherDashboardCoordinatorDelegate?
     
     @Published private(set) var state: State = .idle
     
-    init(coordinator: CurrentWeatherCoordinatorDelegate, service: CurrentWeatherable = AppState.shared) {
+    init(coordinator: WeatherDashboardCoordinatorDelegate, service: CurrentWeatherable = AppState.shared) {
         self.delegate = coordinator
         self.appState = service
     }

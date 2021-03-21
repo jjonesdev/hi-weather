@@ -19,7 +19,7 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let child = CurrentWeatherCoordinator(
+        let child = WeatherDashboardCoordinator(
             navigationController: navigationController,
             coordinator: self
         )

@@ -21,9 +21,9 @@
 		E0681BDB260632BE00818A8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDA260632BE00818A8C /* Assets.xcassets */; };
 		E0681BE1260632BE00818A8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0681BDF260632BE00818A8C /* LaunchScreen.storyboard */; };
 		E0681BEC260632BF00818A8C /* HiWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BEB260632BF00818A8C /* HiWeatherTests.swift */; };
-		E0681C0B2606331A00818A8C /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681C0A2606331A00818A8C /* CurrentWeatherViewController.swift */; };
-		E06AAF21260648AE00B9AA52 /* CurrentWeatherCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF20260648AE00B9AA52 /* CurrentWeatherCoordinator.swift */; };
-		E06AAF2926064C4500B9AA52 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF2826064C4500B9AA52 /* CurrentWeatherViewModel.swift */; };
+		E0681C0B2606331A00818A8C /* WeatherDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681C0A2606331A00818A8C /* WeatherDashboardViewController.swift */; };
+		E06AAF21260648AE00B9AA52 /* WeatherDashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF20260648AE00B9AA52 /* WeatherDashboardCoordinator.swift */; };
+		E06AAF2926064C4500B9AA52 /* WeatherDashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF2826064C4500B9AA52 /* WeatherDashboardViewModel.swift */; };
 		E06AAF3E260651B300B9AA52 /* AppState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E06AAF35260651B300B9AA52 /* AppState.framework */; };
 		E06AAF45260651B300B9AA52 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06AAF44260651B300B9AA52 /* AppStateTests.swift */; };
 		E06AAF47260651B300B9AA52 /* AppState.h in Headers */ = {isa = PBXBuildFile; fileRef = E06AAF37260651B300B9AA52 /* AppState.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -129,9 +129,9 @@
 		E0681BE7260632BF00818A8C /* HiWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HiWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0681BEB260632BF00818A8C /* HiWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiWeatherTests.swift; sourceTree = "<group>"; };
 		E0681BED260632BF00818A8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E0681C0A2606331A00818A8C /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
-		E06AAF20260648AE00B9AA52 /* CurrentWeatherCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherCoordinator.swift; sourceTree = "<group>"; };
-		E06AAF2826064C4500B9AA52 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
+		E0681C0A2606331A00818A8C /* WeatherDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDashboardViewController.swift; sourceTree = "<group>"; };
+		E06AAF20260648AE00B9AA52 /* WeatherDashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDashboardCoordinator.swift; sourceTree = "<group>"; };
+		E06AAF2826064C4500B9AA52 /* WeatherDashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDashboardViewModel.swift; sourceTree = "<group>"; };
 		E06AAF35260651B300B9AA52 /* AppState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppState.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06AAF37260651B300B9AA52 /* AppState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
 		E06AAF38260651B300B9AA52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -334,9 +334,9 @@
 		E06AAF1C2606479D00B9AA52 /* Current Weather */ = {
 			isa = PBXGroup;
 			children = (
-				E06AAF20260648AE00B9AA52 /* CurrentWeatherCoordinator.swift */,
-				E0681C0A2606331A00818A8C /* CurrentWeatherViewController.swift */,
-				E06AAF2826064C4500B9AA52 /* CurrentWeatherViewModel.swift */,
+				E06AAF20260648AE00B9AA52 /* WeatherDashboardCoordinator.swift */,
+				E0681C0A2606331A00818A8C /* WeatherDashboardViewController.swift */,
+				E06AAF2826064C4500B9AA52 /* WeatherDashboardViewModel.swift */,
 				E08B7D482607E39200DD1AB4 /* Cells */,
 				E08B7D2C2607D9C800DD1AB4 /* Views */,
 			);
@@ -679,7 +679,7 @@
 				E058971026064326000CB8B2 /* Coordinator.swift in Sources */,
 				E08B7D172607D77900DD1AB4 /* ReuseIdentifiable.swift in Sources */,
 				E08B7D2E2607D9D700DD1AB4 /* CurrentWeatherCell.swift in Sources */,
-				E0681C0B2606331A00818A8C /* CurrentWeatherViewController.swift in Sources */,
+				E0681C0B2606331A00818A8C /* WeatherDashboardViewController.swift in Sources */,
 				E08B7D352607E0E100DD1AB4 /* DoubleExtensions.swift in Sources */,
 				E05927292607BD2E00A24F24 /* Spacing.swift in Sources */,
 				E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */,
@@ -687,8 +687,8 @@
 				E05927212607BCD300A24F24 /* NSCollectionLayoutSectionExtensions.swift in Sources */,
 				E0681BD7260632BE00818A8C /* SceneDelegate.swift in Sources */,
 				E08B7D4F2607E3B100DD1AB4 /* CurrentWeatherView.swift in Sources */,
-				E06AAF21260648AE00B9AA52 /* CurrentWeatherCoordinator.swift in Sources */,
-				E06AAF2926064C4500B9AA52 /* CurrentWeatherViewModel.swift in Sources */,
+				E06AAF21260648AE00B9AA52 /* WeatherDashboardCoordinator.swift in Sources */,
+				E06AAF2926064C4500B9AA52 /* WeatherDashboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
