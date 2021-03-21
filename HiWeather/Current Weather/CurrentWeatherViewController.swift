@@ -14,11 +14,13 @@ final class CurrentWeatherViewController: UIViewController {
     enum Section: Hashable {
         case currentWeather
         case hourlyWeather
+        case weeklyWeather
     }
     
     enum Item: Hashable {
         case currentWeatherItem
         case hourlyWeatherItem
+        case weeklyWeatherItem
     }
     
     private let viewModel: CurrentWeatherViewModel
@@ -44,6 +46,7 @@ final class CurrentWeatherViewController: UIViewController {
     private func setupCollectionView() {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "current-weather-cell")
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "hourly-weather-cell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "weekly-weather-cell")
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(collectionView)
@@ -61,6 +64,8 @@ final class CurrentWeatherViewController: UIViewController {
             return NSCollectionLayoutSection.fullWidth(groupHeight: .absolute(300))
         case .hourlyWeather:
             return NSCollectionLayoutSection.fullWidth(groupHeight: .absolute(100))
+        case .weeklyWeather:
+            return NSCollectionLayoutSection.fullWidth(groupHeight: .fractional(1.0))
         }
     }
     
@@ -78,14 +83,20 @@ final class CurrentWeatherViewController: UIViewController {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hourly-weather-cell", for: indexPath)
             cell.backgroundColor = .systemTeal
             return cell
+        case .weeklyWeatherItem:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weekly-weather-cell", for: indexPath)
+            cell.backgroundColor = .cyan
+            return cell
         }
     }
     
     func snapshot() -> Snapshot {
         var snapshot = Snapshot()
-        snapshot.appendSections([.currentWeather, .hourlyWeather])
+        snapshot.appendSections([.currentWeather, .hourlyWeather, .weeklyWeather])
+        
         snapshot.appendItems([.currentWeatherItem], toSection: .currentWeather)
         snapshot.appendItems([.hourlyWeatherItem], toSection: .hourlyWeather)
+        snapshot.appendItems([.weeklyWeatherItem], toSection: .weeklyWeather)
         
         return snapshot
     }
