@@ -6,9 +6,10 @@
 //
 
 import Combine
+import AppState
 
 public protocol CurrentWeatherServiceable {
-    func loadCurrentWeather() -> AnyPublisher<CurrentWeather, Error>
+    func fetchCurrentWeather() -> AnyPublisher<CurrentWeather, Error>
 }
 
 public final class WeatherService {
@@ -17,7 +18,7 @@ public final class WeatherService {
 }
 
 extension WeatherService: CurrentWeatherServiceable {
-    public func loadCurrentWeather() -> AnyPublisher<CurrentWeather, Error> {
+    public func fetchCurrentWeather() -> AnyPublisher<CurrentWeather, Error> {
         urlSession.publisher(for: Endpoint.currentWeather.url)
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import Combine
-import Networking
+import WeatherService
 
 final class CurrentWeatherViewModel {
     private let service: CurrentWeatherServiceable
@@ -20,7 +20,7 @@ final class CurrentWeatherViewModel {
         self.delegate = coordinator
         self.service = service
         
-        service.loadCurrentWeather()
+        service.fetchCurrentWeather()
             .sink { (completion) in
                 print(completion)
             } receiveValue: { (response) in
