@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 final class CurrentWeatherViewController: UIViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Section, Item>
@@ -24,6 +25,7 @@ final class CurrentWeatherViewController: UIViewController {
     }
     
     private let viewModel: CurrentWeatherViewModel
+    private var cancellables: Set<AnyCancellable> = []
     
     private lazy var collectionView = UICollectionView(
         frame: view.bounds,
@@ -35,12 +37,34 @@ final class CurrentWeatherViewController: UIViewController {
     init(viewModel: CurrentWeatherViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
+        
+        viewModel.perform(.loadCurrentWeather)
     }
         
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        bindViewModelState()
         dataSource.apply(snapshot())
+    }
+    
+    private func bindViewModelState() {
+        viewModel.$state
+            .sink(receiveValue: update(state:))
+            .store(in: &cancellables)
+    }
+    
+    private func update(state: CurrentWeatherViewModel.State) {
+        switch state {
+        case .idle:
+            return
+        case .loading:
+            print("loading")
+        case let .failed(error):
+            print(error)
+        case let .loaded(currentWeather):
+            print(currentWeather.current)
+        }
     }
     
     private func setupCollectionView() {
