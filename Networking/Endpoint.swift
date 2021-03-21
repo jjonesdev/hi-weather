@@ -35,6 +35,8 @@ extension Endpoint {
             queryItems: [
                 URLQueryItem(name: "lat", value: "42.331429"),
                 URLQueryItem(name: "lon", value: "-83.045753"),
+                // Generally, I would use CocoaPodKeys for secret/key management.
+                // For ease of use in this scenario, I am using the key directly.
                 URLQueryItem(name: "appid", value: "fec13dae1190911bb66db2641570454e"),
             ]
         )

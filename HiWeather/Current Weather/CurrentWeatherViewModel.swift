@@ -10,9 +10,8 @@ import Networking
 
 final class CurrentWeatherViewModel {
     private let service: CurrentWeatherServiceable
-    
+    private var cancellables: Set<AnyCancellable> = []
     weak var delegate: CurrentWeatherCoordinatorDelegate?
-    private var cancellables = Set<AnyCancellable>()
     
     init(
         coordinator: CurrentWeatherCoordinatorDelegate,

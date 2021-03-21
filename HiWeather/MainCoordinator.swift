@@ -23,6 +23,7 @@ final class MainCoordinator: Coordinator {
             navigationController: navigationController,
             coordinator: self
         )
+        
         childCoordinators.append(child)
         child.start()
     }
