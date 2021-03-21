@@ -9,10 +9,23 @@ import XCTest
 @testable import WeatherService
 
 class WeatherServiceTests: XCTestCase {
+    var mockWeatherServiceable: MockWeatherServiceable!
     
-    override func setUp() {}
+    override func setUp() {
+        mockWeatherServiceable = MockWeatherServiceable()
+    }
     
-    override func tearDown() {}
+    override func tearDown() {
+        mockWeatherServiceable = nil
+    }
+    
+    func testFetchCurrentWeatherIsCalled() {
+        // When fetchCurrentWeather is called.
+        _ = mockWeatherServiceable.fetchCurrentWeather()
+        
+        // Then the method is triggered.
+        XCTAssertTrue(mockWeatherServiceable.isFetchCurrentWeatherCalled)
+    }
     
     func testEndpointUrlConstruction() {
         // Given this endpoint URL object is created.

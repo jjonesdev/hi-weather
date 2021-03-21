@@ -10,6 +10,7 @@
 		E058971026064326000CB8B2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058970F26064326000CB8B2 /* Coordinator.swift */; };
 		E0589715260643BA000CB8B2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0589714260643BA000CB8B2 /* MainCoordinator.swift */; };
 		E05926F32607AAA500A24F24 /* MockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05926F22607AAA500A24F24 /* MockEndpoint.swift */; };
+		E05926FB2607AD2A00A24F24 /* MockWeatherServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05926FA2607AD2A00A24F24 /* MockWeatherServiceable.swift */; };
 		E067FE7226067AE000417E97 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E067FE7126067AE000417E97 /* Endpoint.swift */; };
 		E067FE872607906E00417E97 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E067FE862607906E00417E97 /* AppState.swift */; };
 		E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0681BD4260632BE00818A8C /* AppDelegate.swift */; };
@@ -106,6 +107,7 @@
 		E058970F26064326000CB8B2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E0589714260643BA000CB8B2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E05926F22607AAA500A24F24 /* MockEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEndpoint.swift; sourceTree = "<group>"; };
+		E05926FA2607AD2A00A24F24 /* MockWeatherServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeatherServiceable.swift; sourceTree = "<group>"; };
 		E067FE7126067AE000417E97 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E067FE862607906E00417E97 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E0681BD1260632BE00818A8C /* HiWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				E05926F22607AAA500A24F24 /* MockEndpoint.swift */,
+				E05926FA2607AD2A00A24F24 /* MockWeatherServiceable.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -213,6 +216,13 @@
 				E058970F26064326000CB8B2 /* Coordinator.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E05926F92607ACF100A24F24 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		E067FE852607905500417E97 /* Supporting Files */ = {
@@ -292,8 +302,9 @@
 		E06AAF43260651B300B9AA52 /* AppStateTests */ = {
 			isa = PBXGroup;
 			children = (
-				E06AAF44260651B300B9AA52 /* AppStateTests.swift */,
 				E06AAF46260651B300B9AA52 /* Info.plist */,
+				E06AAF44260651B300B9AA52 /* AppStateTests.swift */,
+				E05926F92607ACF100A24F24 /* Mocks */,
 			);
 			path = AppStateTests;
 			sourceTree = "<group>";
@@ -313,9 +324,9 @@
 		E06AAF6A260651CE00B9AA52 /* WeatherServiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				E025A3072607A2CC00E18909 /* Mocks */,
-				E06AAF6B260651CE00B9AA52 /* WeatherServiceTests.swift */,
 				E06AAF6D260651CE00B9AA52 /* Info.plist */,
+				E06AAF6B260651CE00B9AA52 /* WeatherServiceTests.swift */,
+				E025A3072607A2CC00E18909 /* Mocks */,
 			);
 			path = WeatherServiceTests;
 			sourceTree = "<group>";
@@ -639,6 +650,7 @@
 			files = (
 				E05926F32607AAA500A24F24 /* MockEndpoint.swift in Sources */,
 				E06AAF6C260651CE00B9AA52 /* WeatherServiceTests.swift in Sources */,
+				E05926FB2607AD2A00A24F24 /* MockWeatherServiceable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
