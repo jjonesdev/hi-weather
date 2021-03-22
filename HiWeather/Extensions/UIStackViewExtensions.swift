@@ -22,5 +22,20 @@ extension UIStackView {
         
         return stack
     }
+    
+    static func horizontal(
+        alignment: UIStackView.Alignment = .center,
+        distribution: UIStackView.Distribution = .fill,
+        spacing: CGFloat = Spacing.small
+    ) -> UIStackView {
+        let stack = UIStackView()
+        
+        stack.axis = .horizontal
+        stack.alignment = alignment
+        stack.distribution = distribution
+        stack.spacing = spacing
+        
+        return stack
+    }
 }
 
