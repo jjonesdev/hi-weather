@@ -8,7 +8,7 @@
 import Foundation
 
 extension Double {
-    var toFarenheit: String {
+    var asKelvinToFarenheitString: String {
         let temperature = self
         let result = Int((temperature * 9/5 - 459.67))
         return "\(result)℉"
