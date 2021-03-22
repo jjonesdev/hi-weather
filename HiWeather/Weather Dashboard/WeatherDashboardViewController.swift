@@ -21,7 +21,7 @@ final class WeatherDashboardViewController: UIViewController {
     
     enum Item: Hashable {
         case currentWeatherItem(CurrentWeather)
-        case hourlyWeatherItem
+        case hourlyWeatherItem(Current)
         case weeklyWeatherItem
     }
     
@@ -34,7 +34,7 @@ final class WeatherDashboardViewController: UIViewController {
     )
     
     private lazy var dataSource = makeDataSource()
-            
+    
     init(viewModel: WeatherDashboardViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -70,7 +70,7 @@ final class WeatherDashboardViewController: UIViewController {
     
     private func setupCollectionView() {
         collectionView.register(CurrentWeatherCell.self, forCellWithReuseIdentifier: CurrentWeatherCell.reuseIdentifer)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "hourly-weather-cell")
+        collectionView.register(HourlyWeatherCell.self, forCellWithReuseIdentifier: HourlyWeatherCell.reuseIdentifer)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "weekly-weather-cell")
         collectionView.backgroundColor = .systemGroupedBackground
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -91,7 +91,7 @@ final class WeatherDashboardViewController: UIViewController {
         case .currentWeather:
             return NSCollectionLayoutSection.fullWidth(groupHeight: .absolute(300))
         case .hourlyWeather:
-            return NSCollectionLayoutSection.fullWidth(groupHeight: .absolute(100))
+            return makeHourlyWeatherSection()
         case .weeklyWeather:
             return NSCollectionLayoutSection.fullWidth(groupHeight: .fractional(1.0))
         }
@@ -104,26 +104,28 @@ final class WeatherDashboardViewController: UIViewController {
     private func cell(collectionView: UICollectionView, indexPath: IndexPath, item: Item) -> UICollectionViewCell {
         switch item {
         case let .currentWeatherItem(currentWeather):
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: CurrentWeatherCell.reuseIdentifer,
-                for: indexPath
-            ) as! CurrentWeatherCell
-            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrentWeatherCell.reuseIdentifer,
+                                                          for: indexPath) as! CurrentWeatherCell
             cell.setup(location: currentWeather.timezone, temperature: currentWeather.current.temp)
+            
             return cell
-        case .hourlyWeatherItem:
+            
+        case let .hourlyWeatherItem(hourlyWeather):
             let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: "hourly-weather-cell",
+                withReuseIdentifier: HourlyWeatherCell.reuseIdentifer,
                 for: indexPath
-            )
-            cell.backgroundColor = .systemTeal
+            ) as! HourlyWeatherCell
+            cell.setup(date: hourlyWeather.dt, temperature: hourlyWeather.temp)
+            
             return cell
+            
         case .weeklyWeatherItem:
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: "weekly-weather-cell",
                 for: indexPath
             )
             cell.backgroundColor = .cyan
+            
             return cell
         }
     }
@@ -131,9 +133,13 @@ final class WeatherDashboardViewController: UIViewController {
     func makeSnapshot(with currentWeather: CurrentWeather) -> Snapshot {
         var snapshot = Snapshot()
         snapshot.appendSections([.currentWeather, .hourlyWeather, .weeklyWeather])
- 
         snapshot.appendItems([.currentWeatherItem(currentWeather)], toSection: .currentWeather)
-        snapshot.appendItems([.hourlyWeatherItem], toSection: .hourlyWeather)
+        
+        let hourlyWeather = currentWeather.hourly
+            .filter { Date(timeIntervalSince1970: Double($0.dt)).isToday }
+            .map { Item.hourlyWeatherItem($0) }
+        
+        snapshot.appendItems(hourlyWeather, toSection: .hourlyWeather)
         snapshot.appendItems([.weeklyWeatherItem], toSection: .weeklyWeather)
         
         return snapshot
@@ -141,5 +147,31 @@ final class WeatherDashboardViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension WeatherDashboardViewController {
+    func makeHourlyWeatherSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.15),
+                                               heightDimension: .absolute(50))
+
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+        section.interGroupSpacing = Spacing.small
+        section.contentInsets = .init(
+            top: Spacing.small,
+            leading: Spacing.medium,
+            bottom: Spacing.small,
+            trailing: Spacing.medium
+        )
+        
+        return section
     }
 }

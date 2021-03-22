@@ -13,13 +13,13 @@ final class CurrentWeatherView: UIView {
     
     var location: String? {
         didSet {
-            locationLabel.text = location ?? "n/a"
+            locationLabel.text = location
         }
     }
     
     var temperature: String? {
         didSet {
-            temperatureLabel.text = temperature ?? "n/a"
+            temperatureLabel.text = temperature
         }
     }
     
