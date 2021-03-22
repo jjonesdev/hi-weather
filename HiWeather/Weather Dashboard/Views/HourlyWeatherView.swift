@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherView.swift
+//  HourlyWeatherView.swift
 //  HiWeather
 //
 //  Created by Jordan Jones on 3/21/21.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class CurrentWeatherView: UIView {
-    private lazy var locationLabel = makeCurrentLocationLabel()
-    private lazy var temperatureLabel = makeCurrentTemperatureLabel()
+final class HourlyWeatherView: UIView {
+    private lazy var timeLabel = makeTimeLabel()
+    private lazy var temperatureLabel = makeTemperatureLabel()
     
-    var location: String? {
+    var time: String? {
         didSet {
-            locationLabel.text = location
+            timeLabel.text = time
         }
     }
     
@@ -29,10 +29,11 @@ final class CurrentWeatherView: UIView {
     }
     
     private func setupSubviews() {
-        let vStack = UIStackView.vertical()
+        let vStack = UIStackView.vertical(spacing: Spacing.extraSmall)
         vStack.translatesAutoresizingMaskIntoConstraints = false
-        vStack.addArrangedSubview(locationLabel)
+        vStack.addArrangedSubview(timeLabel)
         vStack.addArrangedSubview(temperatureLabel)
+        
         addSubview(vStack)
         
         NSLayoutConstraint.activate([
@@ -42,22 +43,20 @@ final class CurrentWeatherView: UIView {
             vStack.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-        
-    private func makeCurrentLocationLabel() -> UILabel {
+    
+    private func makeTimeLabel() -> UILabel {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .body)
+        label.font = .preferredFont(forTextStyle: .caption2)
         label.textAlignment = .center
-        
+        label.text = "5PM"
         return label
     }
     
-    private func makeCurrentTemperatureLabel() -> UILabel {
+    private func makeTemperatureLabel() -> UILabel {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .largeTitle)
+        label.font = .preferredFont(forTextStyle: .caption1)
         label.textAlignment = .center
-        
+        label.text = 238.939.asKelvinToFarenheitString
         return label
     }
     

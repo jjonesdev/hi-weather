@@ -29,10 +29,11 @@ extension NSCollectionLayoutSection {
         groupHeight: Height,
         itemHeight: Height = .fractional(1.0),
         interGroupSpacing: CGFloat = Spacing.small,
-        contentInsets: NSDirectionalEdgeInsets = .init(top: Spacing.small,
-                                                       leading: Spacing.medium,
-                                                       bottom: Spacing.small,
-                                                       trailing: Spacing.medium)
+        contentInsets: NSDirectionalEdgeInsets = .init(
+            top: Spacing.small,
+            leading: Spacing.medium,
+            bottom: Spacing.small,
+            trailing: Spacing.medium)
         )-> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: itemHeight.layoutDimension)

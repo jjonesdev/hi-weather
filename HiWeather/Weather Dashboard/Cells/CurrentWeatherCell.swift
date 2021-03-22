@@ -18,7 +18,7 @@ final class CurrentWeatherCell: UICollectionViewCell, ReuseIdentifiable {
     
     func setup(location: String, temperature: Double) {
         currentWeatherView.location = location
-        currentWeatherView.temperature = temperature.toFarenheit
+        currentWeatherView.temperature = temperature.asKelvinToFarenheitString
     }
     
     private func setupSubviews() {

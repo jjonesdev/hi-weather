@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0479AA526080F2C00DB6AD0 /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479AA426080F2C00DB6AD0 /* HourlyWeatherView.swift */; };
+		E0479AB12608137300DB6AD0 /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479AB02608137300DB6AD0 /* HourlyWeatherCell.swift */; };
+		E0479AB82608141B00DB6AD0 /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479AB72608141B00DB6AD0 /* UIStackViewExtensions.swift */; };
+		E0479ABF260817F600DB6AD0 /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479ABE260817F600DB6AD0 /* DateFormatterExtensions.swift */; };
+		E0479ACB260818A000DB6AD0 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0479ACA260818A000DB6AD0 /* DateExtensions.swift */; };
 		E058971026064326000CB8B2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058970F26064326000CB8B2 /* Coordinator.swift */; };
 		E0589715260643BA000CB8B2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0589714260643BA000CB8B2 /* MainCoordinator.swift */; };
 		E05926F32607AAA500A24F24 /* MockEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05926F22607AAA500A24F24 /* MockEndpoint.swift */; };
@@ -112,6 +117,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E0479AA426080F2C00DB6AD0 /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
+		E0479AB02608137300DB6AD0 /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
+		E0479AB72608141B00DB6AD0 /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
+		E0479ABE260817F600DB6AD0 /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
+		E0479ACA260818A000DB6AD0 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		E058970F26064326000CB8B2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		E0589714260643BA000CB8B2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		E05926F22607AAA500A24F24 /* MockEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEndpoint.swift; sourceTree = "<group>"; };
@@ -265,6 +275,9 @@
 				E05927202607BCD300A24F24 /* NSCollectionLayoutSectionExtensions.swift */,
 				E08B7D342607E0E100DD1AB4 /* DoubleExtensions.swift */,
 				E07C02782607FDB9006AC7F5 /* UIViewExtensions.swift */,
+				E0479AB72608141B00DB6AD0 /* UIStackViewExtensions.swift */,
+				E0479ABE260817F600DB6AD0 /* DateFormatterExtensions.swift */,
+				E0479ACA260818A000DB6AD0 /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -416,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				E08B7D4E2607E3B100DD1AB4 /* CurrentWeatherView.swift */,
+				E0479AA426080F2C00DB6AD0 /* HourlyWeatherView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				E08B7D2D2607D9D700DD1AB4 /* CurrentWeatherCell.swift */,
+				E0479AB02608137300DB6AD0 /* HourlyWeatherCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -673,8 +688,13 @@
 			files = (
 				E058971026064326000CB8B2 /* Coordinator.swift in Sources */,
 				E08B7D172607D77900DD1AB4 /* ReuseIdentifiable.swift in Sources */,
+				E0479AA526080F2C00DB6AD0 /* HourlyWeatherView.swift in Sources */,
 				E08B7D2E2607D9D700DD1AB4 /* CurrentWeatherCell.swift in Sources */,
 				E0681C0B2606331A00818A8C /* WeatherDashboardViewController.swift in Sources */,
+				E0479ABF260817F600DB6AD0 /* DateFormatterExtensions.swift in Sources */,
+				E0479ACB260818A000DB6AD0 /* DateExtensions.swift in Sources */,
+				E0479AB12608137300DB6AD0 /* HourlyWeatherCell.swift in Sources */,
+				E0479AB82608141B00DB6AD0 /* UIStackViewExtensions.swift in Sources */,
 				E08B7D352607E0E100DD1AB4 /* DoubleExtensions.swift in Sources */,
 				E05927292607BD2E00A24F24 /* Spacing.swift in Sources */,
 				E0681BD5260632BE00818A8C /* AppDelegate.swift in Sources */,
