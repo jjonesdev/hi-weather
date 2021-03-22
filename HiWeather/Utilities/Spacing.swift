@@ -9,7 +9,6 @@ import struct UIKit.CGFloat
 
 /// Standard app spacing constants.
 enum Spacing {
-    
     /// Represents a spacing of 4 points.
     static let extraSmall: CGFloat = 4
     
