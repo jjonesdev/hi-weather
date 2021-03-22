@@ -29,7 +29,7 @@ final class HourlyWeatherView: UIView {
     }
     
     private func setupSubviews() {
-        let vStack = UIStackView.vertical(alignment: .center, spacing: Spacing.extraSmall)
+        let vStack = UIStackView.vertical(spacing: Spacing.extraSmall)
         vStack.translatesAutoresizingMaskIntoConstraints = false
         vStack.addArrangedSubview(timeLabel)
         vStack.addArrangedSubview(temperatureLabel)

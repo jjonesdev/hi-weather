@@ -29,7 +29,8 @@ final class CurrentWeatherView: UIView {
     }
     
     private func setupSubviews() {
-        let vStack = makeVerticalStack()
+        let vStack = UIStackView.vertical()
+        vStack.translatesAutoresizingMaskIntoConstraints = false
         vStack.addArrangedSubview(locationLabel)
         vStack.addArrangedSubview(temperatureLabel)
         addSubview(vStack)
@@ -41,18 +42,7 @@ final class CurrentWeatherView: UIView {
             vStack.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
-    private func makeVerticalStack() -> UIStackView {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.distribution = .fill
-        stack.alignment = .center
-        stack.spacing = Spacing.small
         
-        return stack
-    }
-    
     private func makeCurrentLocationLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

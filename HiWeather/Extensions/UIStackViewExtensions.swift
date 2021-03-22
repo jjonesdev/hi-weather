@@ -9,7 +9,7 @@ import UIKit
 
 extension UIStackView {
     static func vertical(
-        alignment: UIStackView.Alignment = .fill,
+        alignment: UIStackView.Alignment = .center,
         distribution: UIStackView.Distribution = .fill,
         spacing: CGFloat = Spacing.small
     ) -> UIStackView {
