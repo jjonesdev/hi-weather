@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+extension Date {
+    var asShortTime: String {
+        DateFormatter.shortTime.string(from: self)
+    }
+    
+    var isToday: Bool {
+        Calendar.current.isDateInToday(self)
+    }
+}
