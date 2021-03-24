@@ -9,13 +9,28 @@ import UIKit
 
 extension UIStackView {
     static func vertical(
-        alignment: UIStackView.Alignment = .center,
+        alignment: UIStackView.Alignment = .fill,
         distribution: UIStackView.Distribution = .fill,
         spacing: CGFloat = Spacing.small
     ) -> UIStackView {
         let stack = UIStackView()
         
         stack.axis = .vertical
+        stack.alignment = alignment
+        stack.distribution = distribution
+        stack.spacing = spacing
+        
+        return stack
+    }
+    
+    static func horizontal(
+        alignment: UIStackView.Alignment = .fill,
+        distribution: UIStackView.Distribution = .fill,
+        spacing: CGFloat = Spacing.small
+    ) -> UIStackView {
+        let stack = UIStackView()
+        
+        stack.axis = .horizontal
         stack.alignment = alignment
         stack.distribution = distribution
         stack.spacing = spacing

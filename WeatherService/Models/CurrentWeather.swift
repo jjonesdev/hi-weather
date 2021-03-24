@@ -9,18 +9,30 @@ import Foundation
 
 // MARK: - WeatherReponse
 public struct CurrentWeather: Decodable, Hashable {
-    public let lat: Double
-    public let lon: Double
-    public let timezone: String
-    public let timezoneOffset: Int
-    public let current: Current
-    public let minutely: [Minutely]
-    public let hourly: [Current]
-    public let daily: [Daily]
+    public let lat: Double?
+    public let lon: Double?
+    public let timezone: String?
+    public let timezoneOffset: Int?
+    public let current: Current?
+    public let minutely: [Minutely]?
+    public let hourly: [Current]?
+    public let daily: [Daily]?
     
     enum CodingKeys: String, CodingKey {
         case lat, lon, timezone, current, minutely, hourly, daily
         case timezoneOffset = "timezone_offset"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.lat = try container.decodeIfPresent(Double.self, forKey: .lat)
+        self.lon = try container.decodeIfPresent(Double.self, forKey: .lon)
+        self.timezone = try container.decodeIfPresent(String.self, forKey: .timezone)
+        self.timezoneOffset = try container.decodeIfPresent(Int.self, forKey: .timezoneOffset)
+        self.current = try container.decodeIfPresent(Current.self, forKey: .current)
+        self.minutely = try container.decodeIfPresent([Minutely].self, forKey: .minutely)
+        self.hourly = try container.decodeIfPresent([Current].self, forKey: .hourly)
+        self.daily = try container.decodeIfPresent([Daily].self, forKey: .daily)        
     }
 }
 
