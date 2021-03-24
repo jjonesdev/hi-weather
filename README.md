@@ -2,6 +2,10 @@
 
 Hi Weather! is a basic weather app (currently uncompleted) built as a side project to show my current coding skills when building an app from scratch.
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/36642060/112347251-11b8a600-8c9d-11eb-8802-fa11f4da0403.gif" />
+</p>
+
 ## Given More Time (3/22)
 As this app was started over a weekend with some spare time, here are a few things I would like to do more of given the time:
 * The app is set up for easy testing, but I would like to write more robust tests around the ViewModels and Frameworks.
