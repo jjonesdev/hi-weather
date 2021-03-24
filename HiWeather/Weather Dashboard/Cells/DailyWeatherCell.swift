@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WeatherService
 
 final class DailyWeatherCell: UICollectionViewCell, ReuseIdentifiable {
     private let dailyWeatherView = DailyWeatherView()
@@ -13,6 +14,13 @@ final class DailyWeatherCell: UICollectionViewCell, ReuseIdentifiable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
+    }
+    
+    func setup(_ dailyWeather: Daily) {
+        dailyWeatherView.dayOfMonth = Date(timeIntervalSince1970: Double(dailyWeather.dt)).asDayOfMonth
+        dailyWeatherView.abbreviatedWeekDay = Date(timeIntervalSince1970: Double(dailyWeather.dt)).asAbbreviatedWeekDay.uppercased()
+        dailyWeatherView.weatherDescription = dailyWeather.weather.first?.description
+        dailyWeatherView.temperature = dailyWeather.temp.day.asKelvinToFarenheitString
     }
         
     private func setupSubviews() {

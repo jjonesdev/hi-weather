@@ -8,27 +8,45 @@
 import UIKit
 
 final class DailyWeatherView: UIView {
-    private let dateLabel = UILabel()
-    private let dayLabel = UILabel()
-    private let descriptionLabel = UILabel()
-    private let temperatureLabel = UILabel()
+    private lazy var dateLabel = makeDateLabel()
+    private lazy var dayLabel = makeDayLabel()
+    private lazy var descriptionLabel = makeSubheadlineLabel()
+    private lazy var temperatureLabel = makeSubheadlineLabel()
+    
+    var weatherDescription: String? {
+        didSet {
+            descriptionLabel.text = weatherDescription
+        }
+    }
+    
+    var temperature: String? {
+        didSet {
+            temperatureLabel.text = temperature
+        }
+    }
+    
+    var dayOfMonth: String? {
+        didSet {
+            dateLabel.text = dayOfMonth
+        }
+    }
+    
+    var abbreviatedWeekDay: String? {
+        didSet {
+            dayLabel.text = abbreviatedWeekDay
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubviews()
         
-        dateLabel.text = "22"
-        dayLabel.text = "MON"
-        
-        descriptionLabel.text = "Sunny, with a high of 55."
-        temperatureLabel.text = 239.93.asKelvinToFarenheitString
+        dateLabel.textAlignment = .center
+        dayLabel.textAlignment = .center
     }
     
     private func setupSubviews() {
-        let parentStack = UIStackView.horizontal(
-            distribution: .fillProportionally,
-            spacing: Spacing.medium
-        )
+        let parentStack = UIStackView.horizontal(spacing: Spacing.large)
         
         parentStack.translatesAutoresizingMaskIntoConstraints = false
         parentStack.addArrangedSubview(makeChildStack())
@@ -37,22 +55,46 @@ final class DailyWeatherView: UIView {
                 
         addSubview(parentStack)
         
+        descriptionLabel.setContentHuggingPriority(.init(200), for: .horizontal)
+        
         NSLayoutConstraint.activate([
             parentStack.topAnchor.constraint(equalTo: topAnchor),
             parentStack.leadingAnchor.constraint(equalTo: leadingAnchor),
-            parentStack.trailingAnchor.constraint(equalTo: trailingAnchor),
-            parentStack.bottomAnchor.constraint(equalTo: bottomAnchor)
+            parentStack.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     
     private func makeChildStack() -> UIStackView {
         let stack = UIStackView.vertical(spacing: Spacing.extraSmall)
-        stack.translatesAutoresizingMaskIntoConstraints = false
         
+        stack.translatesAutoresizingMaskIntoConstraints = false
         stack.addArrangedSubview(dateLabel)
         stack.addArrangedSubview(dayLabel)
         
+        stack.widthAnchor.constraint(greaterThanOrEqualToConstant: 30).isActive = true
+        
         return stack
+    }
+    
+    private func makeDayLabel() -> UILabel {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .caption1)
+        
+        return label
+    }
+    
+    private func makeDateLabel() -> UILabel {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .caption2)
+        
+        return label
+    }
+    
+    private func makeSubheadlineLabel() -> UILabel {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .subheadline)
+        
+        return label
     }
     
     required init?(coder: NSCoder) {

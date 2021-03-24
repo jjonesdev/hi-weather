@@ -13,4 +13,16 @@ extension DateFormatter {
         formatter.setLocalizedDateFormatFromTemplate("j")
         return formatter
     }()
+    
+    static let abbreviatedWeekDay: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("E..EEE")
+        return formatter
+    }()
+    
+    static let dayOfMonth: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.setLocalizedDateFormatFromTemplate("d")
+        return formatter
+    }()
 }
