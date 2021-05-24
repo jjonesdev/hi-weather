@@ -1,14 +1,14 @@
 ## Hi Weather
 
-Hi Weather! is a basic weather app (currently uncompleted) built as a side project to show my current coding skills when building an app from scratch.
+Hi Weather! is a basic weather app (currently uncompleted) built as a side project to show my current coding skills when building an app from scratch. I took a weekend to put this together in 3-4 hour blocks per day. 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/36642060/112347251-11b8a600-8c9d-11eb-8802-fa11f4da0403.gif" />
 </p>
 
-## Given More Time (3/22)
+## Given More Time
 As this app was started over a weekend with some spare time, here are a few things I would like to do more of given the time:
-* The app is set up for easy testing, but I would like to write more robust tests around the ViewModels and Frameworks.
+* The app is set up for testability, but I would like to write more robust tests around the ViewModels and Frameworks.
 * Creating a more generic base class for UICollectionViewCell types to inherit from would be nice, as most of them currently implement similar behavior with the same method names.
 * Implement CoreLocation to automatically detect the users location.
 * Find a way to break my Models out of the Networking framework, or just considering a new approach for this in general. Currently, I am needing to import WeatherService purely to access models. I'd like to not import WeatherService, and find a different way to share the models. This could look like another framework, or even a translation layer for what type is returned from the AppState (possibly a new model specific to the App as opposed to response related).
