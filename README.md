@@ -1,6 +1,6 @@
 ## Hi Weather
 
-Hi Weather! is a basic weather app (currently uncompleted) built as a side project to show my current coding skills when building an app from scratch. I took a weekend to put this together in 3-4 hour blocks per day. 
+Hi Weather! is a basic weather app (currently uncompleted) built as a side project to show my current coding skills when building an app from scratch. I took a few days to put this together in 3-4 hour blocks per day. 
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/36642060/112347251-11b8a600-8c9d-11eb-8802-fa11f4da0403.gif" />
